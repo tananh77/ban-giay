@@ -32,7 +32,7 @@ namespace ShopGiay.Controllers
                 }
                 else
                 {
-                    var data = db.Accounts.FirstOrDefault(s => s.Username == user || s.Password == pass);
+                    var data = db.Accounts.FirstOrDefault(s => s.Username == user && s.Password == pass);
                     if (data != null)
                     {
                         Session["UserId"] = data.UserId;
@@ -142,7 +142,7 @@ namespace ShopGiay.Controllers
             return RedirectToAction("Login", "Account");
         }
         [HttpPost]
-        public ActionResult SaveProfile(int? phone, string email, bool sex, string address, string firstname, string lastname)
+        public ActionResult UpdateProfile(int? phone, string email, bool sex, string address, string firstname, string lastname)
         {
             try
             {
@@ -155,6 +155,7 @@ namespace ShopGiay.Controllers
                 // Cập nhật thông tin
                 if (user != null)
                 {
+                    // Cập nhật các trường thông tin
                     user.Phone = phone;
                     user.Email = email;
                     user.Address = address;
@@ -162,23 +163,27 @@ namespace ShopGiay.Controllers
                     user.Lastname = lastname;
                     user.Sex = sex;
 
-                    // Lưu thay đổi vào cơ sở dữ liệu
-                    db.SaveChanges();
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        db.SaveChanges();
 
-                    // Trả về kết quả thành công
-                    return Json(new { success = true, message = "Profile updated successfully!" });
+                        // Trả về kết quả thành công
+                        TempData["SuccessMessage"] = "Profile updated successfully!";
                 }
                 else
                 {
-                    return Json(new { success = false, message = "User not found." });
+                    TempData["SuccessMessage"] = "Error!";
                 }
             }
             catch (Exception ex)
             {
                 // Xử lý lỗi và trả về kết quả lỗi
-                return Json(new { success = false, message = "An error occurred while updating profile. Please try again later." });
+                TempData["ErrorMessage"] = "An error occurred while updating profile. Please try again later.";
             }
+
+            // Chuyển hướng về trang người dùng sau khi cập nhật xong
+            return RedirectToAction("InforAccount");
         }
+
         public ActionResult Logout()
         {
             Session["UserId"] = null;
