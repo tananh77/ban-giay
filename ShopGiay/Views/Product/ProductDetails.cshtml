@@ -1,0 +1,34 @@
+﻿@model ShopGiay.Models.Product
+
+<div class="container">
+    <h2>Product Details</h2>
+
+    <div class="row">
+        <!-- Hình ảnh ở bên trái -->
+        <div class="col-md-6">
+            <img src="@Model.Image" class="img-fluid" alt="@Model.Name">
+        </div>
+
+        <!-- Thông tin ở bên phải -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text">Price: $@Model.Price</p>
+                    <p class="card-text">Quantity: @Model.Quantity</p>
+                    <p class="card-text">Descripsion: <br />@Model.Descripsion</p>
+
+                    <!-- Form thêm vào giỏ hàng -->
+                    <form method="post" action="@Url.Action("AddToCart", "YourController")">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="productId" value="@Model.ProductId">
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+
+                        <!-- Nút Buy Now -->
+                        <a href="@Url.Action("BuyNow", "YourController", new { productId = Model.ProductId })" class="btn btn-success">Buy Now</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

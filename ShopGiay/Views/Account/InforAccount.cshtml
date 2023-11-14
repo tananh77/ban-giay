@@ -1,0 +1,206 @@
+﻿@model ShopGiay.Models.AccountModel
+
+@{
+    ViewBag.Title = "User Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <!-- Nút Update Profile -->
+    <div class="row justify-content-end mt-3">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#updateProfileModal">Update Profile</button>
+        </div>
+    </div>
+</div>
+<h2>User Profile</h2>
+
+<div class="row">
+    <!-- Phần trên -->
+    <div class="col-md-12 mb-4">
+        <div class="text-center">
+            <img src="https://th.bing.com/th/id/OIP.f9MyiQPRFxSbgh08byiN_gAAAA?pid=ImgDet&rs=1" alt="Avatar" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+            <h4 class="mt-3">@Model.Lastname</h4>
+        </div>
+    </div>
+
+    <!-- Phần dưới -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Account Information</h5>
+                <dl class="row">
+                    <dt class="col-sm-5">Username</dt>
+                    <dd class="col-sm-7">@Model.Username</dd>
+
+                    <dt class="col-sm-5">Password</dt>
+                    <dd class="col-sm-7">Đổi mật khẩu</dd>
+
+                    <dt class="col-sm-5">Phone</dt>
+                    <dd class="col-sm-7">@Model.Phone</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Personal Information</h5>
+                <dl class="row">
+                    <dt class="col-sm-5">Email</dt>
+                    <dd class="col-sm-7">@Model.Email</dd>
+
+                    <dt class="col-sm-5">Sex</dt>
+                    <dd class="col-sm-7">
+                        @if (Model.Sex.HasValue)
+                        {
+                            @(Model.Sex.Value ? "Male" : "Female")
+                        }
+                        else
+                        {
+                            @:Unknown
+                        }
+                    </dd>
+                    <dt class="col-sm-5">Address</dt>
+                    <dd class="col-sm-7">
+                        @if (!string.IsNullOrEmpty(Model.Address))
+                        {
+                            @Model.Address
+                        }
+                        else
+                        {
+                            @:Empty
+                        }
+                    </dd>
+
+                    <dt class="col-sm-5">First Name</dt>
+                    <dd class="col-sm-7">
+                        @if (!string.IsNullOrEmpty(Model.Firstname))
+                        {
+                            @Model.Firstname
+                        }
+                        else
+                        {
+                            @:Empty
+                        }
+                    </dd>
+
+                    <dt class="col-sm-5">Last Name</dt>
+                    <dd class="col-sm-7">
+                        @if (!string.IsNullOrEmpty(Model.Lastname))
+                        {
+                            @Model.Lastname
+                        }
+                        else
+                        {
+                            @:Empty
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateProfileModal" tabindex="-1" role="dialog" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateProfileModalLabel">Update Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="updateProfileForm">
+                    <!-- Các trường cập nhật thông tin -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" value="@Model.Phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" value="@Model.Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sex" class="form-label">Sex</label>
+                        <select class="form-select" id="sex" name="sex">
+                            <option value="1" @(Model.Sex.HasValue && Model.Sex.Value ? "selected" : "")>Male</option>
+                            <option value="0" @(Model.Sex.HasValue && !Model.Sex.Value ? "selected" : "")>Female</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="@Model.Address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" value="@Model.Firstname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" value="@Model.Lastname">
+                    </div>
+
+                    <!-- Nút Save để gọi tới action trong controller -->
+                    <button type="button" class="btn btn-primary" onclick="saveProfile()">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>
+    function saveProfile() {
+        var phone = $('#phone').val();
+        var email = $('#email').val();
+        var sex = $('#sex').val();
+        var address = $('#address').val();
+        var firstname = $('#firstname').val();
+        var lastname = $('#lastname').val();
+
+        $.ajax({
+            url: '@Url.Action("SaveProfile", "Account")',
+            type: 'POST',
+            data: {
+                phone: phone,
+                email: email,
+                sex: sex,
+                address: address,
+                firstname: firstname,
+                lastname: lastname
+            },
+            success: function (result) {
+                // Hiển thị thông báo thành công
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Profile updated successfully!',
+                    showConfirmButton: false,
+                    timer: 1500  // Tự động đóng sau 1.5 giây
+                });
+
+                // Đóng modal sau khi lưu dữ liệu
+                $('#updateProfileModal').modal('hide');
+
+                // Có thể làm mới trang để cập nhật thông tin mới
+                // window.location.reload();
+            },
+            error: function (error) {
+                // Hiển thị thông báo lỗi
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error updating profile!',
+                    text: 'Please try again later.'
+                });
+            }
+        });
+    }
+</script>

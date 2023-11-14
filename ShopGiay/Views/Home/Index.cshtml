@@ -1,0 +1,22 @@
+﻿@model List<ShopGiay.Models.Product>
+
+<div class="container">
+    <h2>Product List</h2>
+
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <a href="@Url.Action("ProductDetails", "Product", new { productId = product.ProductId })" class="card-link">
+                    <div class="card">
+                        <img src="@product.Image" class="card-img-top" alt="@product.Name" style="max-height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">Price: $@product.Price</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
