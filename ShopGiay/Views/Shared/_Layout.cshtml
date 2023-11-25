@@ -18,11 +18,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex align-items-center">
-                <input type="text" class="form-control mr-2" placeholder="Search">
+                <div class="d-flex align-items-center">
+                    @using (Html.BeginForm("Search", "Product", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            <input type="text" name="searchText" class="form-control" placeholder="Search">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
                 <ul class="navbar-nav flex-grow-1 ml-auto">
-                    <li><a href="@Url.Action("Search", "ControllerName")" class="nav-link text-white"><i class="bi bi-search mr-3"></i></a></li>
                     <li><a href="@Url.Action("InforAccount", "Account")" class="nav-link text-white"><i class="bi bi-person mr-3"></i></a></li>
-                    <li><a href="@Url.Action("ShoppingCart", "ControllerName")" class="nav-link text-white"><i class="bi bi-cart mr-3"></i></a></li>
+                    <li><a href="@Url.Action("Index", "Cart")" class="nav-link text-white"><i class="bi bi-cart mr-3"></i></a></li>
                     <li><a href="@Url.Action("Logout", "Account")" class="nav-link text-white"><i class="bi bi-box-arrow-right"></i></a></li>
                 </ul>
             </div>
@@ -34,6 +46,7 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year -Shop Shoes</p>
+            <p>Liên hệ : 0162 ngày mai nói nữa</p>
         </footer>
     </div>
 

@@ -33,5 +33,21 @@ namespace ShopGiay.Controllers
             // Chuyển dữ liệu sản phẩm đến view để hiển thị
             return View(product);
         }
+        [HttpGet]
+        public ActionResult Search(string searchText)
+        {
+            // Kiểm tra xem searchText có tồn tại hay không
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Nếu không có, chuyển hướng về trang chủ hoặc hiển thị thông báo lỗi
+                return RedirectToAction("Index");
+            }
+
+            // Chạy truy vấn tìm kiếm trong cơ sở dữ liệu
+            var searchResults = db.Products.Where(p => p.Name.Contains(searchText)).ToList();
+
+            // Truyền kết quả tìm kiếm đến view
+            return View(searchResults);
+        }
     }
 }

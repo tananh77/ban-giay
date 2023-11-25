@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ShopGiay.Models.AccountModel
+@{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -20,28 +21,38 @@
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" name="username" class="form-control" />
+                        <input type="text" name="username" class="form-control" style="max-width:20cm" />
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" />
+                        <input type="password" name="password" class="form-control" style="max-width:20cm" />
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" />
+                        <input type="email" name="email" class="form-control" style="max-width:20cm" />
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" name="phone" class="form-control" />
-                    </div>  
+                        <input type="text" name="phone" class="form-control" style="max-width:20cm" />
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                    </div>
+
                     <div class="d-flex">
                         <div class="ml-auto">
                             <button type="submit" class="btn btn-primary">Register</button>
                         </div>
                     </div>
                 }
+
 
                 @if (!string.IsNullOrEmpty(ViewBag.Notification))
                 {

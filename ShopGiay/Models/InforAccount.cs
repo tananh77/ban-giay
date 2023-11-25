@@ -24,14 +24,14 @@ namespace ShopGiay.Models
         [StringLength(50)]
         public string Email { get; set; }
 
-        public int? Phone { get; set; }
+        public string Phone { get; set; }
 
         [StringLength(50)]
         public string Address { get; set; }
 
         public bool? Sex { get; set; }
 
-        [StringLength(50)]
+        [StringLength(1000000000)]
         public string Image { get; set; }
 
         public virtual Account Account { get; set; }

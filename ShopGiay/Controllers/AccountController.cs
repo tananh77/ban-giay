@@ -20,32 +20,22 @@ namespace ShopGiay.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string username, string password)
+        public ActionResult Login(AccountModel model)
         {
-            if (ModelState.IsValid)
-            {
-                string user = username.Trim();
-                string pass = password.Trim();
-                if (user == "" || pass == "")
+                var user = db.Accounts.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
+
+                if (user != null)
                 {
-                    ViewBag.Notification = "Please complete all information";
+                    // Đăng nhập thành công, thực hiện các hành động cần thiết (ví dụ: lưu thông tin vào Session)
+                    Session["UserId"] = user.UserId;
+                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang chính sau khi đăng nhập thành công
                 }
-                else
-                {
-                    var data = db.Accounts.FirstOrDefault(s => s.Username == user && s.Password == pass);
-                    if (data != null)
-                    {
-                        Session["UserId"] = data.UserId;
-                        return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        ViewBag.Notification = "Error";
-                    }
-                }
+
+                ViewBag.Notification = "Invalid username or password.";
+            return View(model);
             }
-            return View();
-        }
+
+
         [HttpGet]
         public ActionResult Register()
         {
@@ -53,55 +43,64 @@ namespace ShopGiay.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(string username, string password, string email, int? phone)
+        public ActionResult Register(AccountModel model)
         {
-            // Kiểm tra dữ liệu đầu vào và thực hiện đăng ký
-            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(email))
+            try
             {
-                // Kiểm tra xem username đã tồn tại trong CSDL chưa
-                if (IsUsernameAvailable(username))
+                // Kiểm tra dữ liệu đầu vào và thực hiện đăng ký
+                if (ModelState.IsValid)
                 {
-                    // Thực hiện xử lý đăng ký ở đây (ví dụ: thêm thông tin vào cơ sở dữ liệu)
-                    // Chú ý: Trong ứng dụng thực tế, bạn cần kiểm tra và xử lý dữ liệu một cách an toàn hơn
-
-                    var newUser = new Account
+                    // Kiểm tra xem username đã tồn tại trong CSDL chưa
+                    if (IsUsernameAvailable(model.Username))
                     {
-                        UserId = "IDUs" + username,
-                        Username = username.Trim(),
-                        Password = password.Trim(),
-                        Role = "user"
-                    };
-                    var newIFUser = new InforAccount
+                        // Thực hiện xử lý đăng ký ở đây (ví dụ: thêm thông tin vào cơ sở dữ liệu)
+                        // Chú ý: Trong ứng dụng thực tế, bạn cần kiểm tra và xử lý dữ liệu một cách an toàn hơn
+
+                        var newUser = new Account
+                        {
+                            UserId = "IDUs" + model.Username,
+                            Username = model.Username.Trim(),
+                            Password = model.Password.Trim(),
+                            Role = "user"
+                        };
+
+                        var newIFUser = new InforAccount
+                        {
+                            InforAccountId = "IDIF" + model.Username,
+                            UserId = "IDUs" + model.Username,
+                            Email = model.Email.Trim(),
+                            Phone = model.Phone
+                        };
+
+                        db.InforAccounts.Add(newIFUser);
+                        db.Accounts.Add(newUser);
+                        db.SaveChanges();
+
+                        // Chuyển hướng đến trang đăng nhập hoặc trang khác tùy ý
+                        return RedirectToAction("Login", "Account");
+                    }
+                    else
                     {
-                        InforAccountId = "IDIF" + username,
-                        UserId = "IDUs" + username,
-                        Email = email.Trim(),
-                        Phone = phone
-                    };
-
-
-                    
-                    db.InforAccounts.Add(newIFUser);
-                    db.Accounts.Add(newUser);
-                    db.SaveChanges();
-
-                    // Chuyển hướng đến trang đăng nhập hoặc trang khác tùy ý
-                    return RedirectToAction("Login", "Account");
+                        // Hiển thị thông báo lỗi nếu username đã tồn tại
+                        ViewBag.Notification = "Username is not available. Please choose another one.";
+                        return View();
+                    }
                 }
                 else
                 {
-                    // Hiển thị thông báo lỗi nếu username đã tồn tại
-                    ViewBag.Notification = "Username is not available. Please choose another one.";
-                    return View();
+                    // Hiển thị thông báo lỗi nếu có
+                    ViewBag.Notification = "Please complete all information";
+                    return View(model);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có
-                ViewBag.Notification = "Please complete all information";
+                // Xử lý ngoại lệ và hiển thị thông báo lỗi
+                ViewBag.Notification = "An error occurred during registration. Please try again later.";
                 return View();
             }
         }
+
         // Hàm kiểm tra xem username đã tồn tại trong CSDL chưa
         private bool IsUsernameAvailable(string username)
         {
@@ -142,7 +141,7 @@ namespace ShopGiay.Controllers
             return RedirectToAction("Login", "Account");
         }
         [HttpPost]
-        public ActionResult UpdateProfile(int? phone, string email, bool sex, string address, string firstname, string lastname)
+        public ActionResult UpdateProfile(string phone, string email, bool sex, string address, string firstname, string lastname)
         {
             try
             {
@@ -189,7 +188,85 @@ namespace ShopGiay.Controllers
             Session["UserId"] = null;
             return RedirectToAction("Login", "Account");
         }
+        // Action để hiển thị trang đổi mật khẩu
+        public ActionResult ChangePass()
+        {
+            return View();
+        }
 
+        // Action xử lý khi người dùng submit form đổi mật khẩu
+        [HttpPost]
+        public ActionResult ChangePass(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Lấy UserId từ Session hoặc Identity của người dùng
+                var userId = Session["UserId"] as string;
+
+                // Kiểm tra mật khẩu cũ có đúng không, ở đây là ví dụ, bạn cần kiểm tra với dữ liệu thực tế từ cơ sở dữ liệu
+                if (IsOldPasswordValid(model.OldPassword))
+                {
+                    // Kiểm tra mật khẩu mới và mật khẩu xác nhận
+                    if (model.NewPassword != model.ConfirmPassword)
+                    {
+                        // Hiển thị thông báo lỗi nếu mật khẩu xác nhận không trùng
+                        ModelState.AddModelError("ConfirmPassword", "Password confirmation does not match the new password.");
+                    }
+                    else
+                    {
+                        // Thực hiện logic đổi mật khẩu
+                        var user = db.Accounts.FirstOrDefault(u => u.UserId == userId);
+
+                        if (user != null)
+                        {
+                            // Thực hiện logic đổi mật khẩu, ví dụ:
+                            user.Password = model.NewPassword;
+
+                            // Lưu thay đổi vào cơ sở dữ liệu
+                            db.SaveChanges();
+
+                            // Hiển thị thông báo đổi mật khẩu thành công
+                            ViewBag.Notification = "Password changed successfully!";
+                        }
+                        else
+                        {
+                            // Hiển thị thông báo lỗi nếu không tìm thấy người dùng
+                            ViewBag.Notification = "User not found.";
+                        }
+                    }
+                }
+                else
+                {
+                    // Hiển thị thông báo lỗi nếu mật khẩu cũ không đúng
+                    ModelState.AddModelError("OldPassword", "Old password is incorrect");
+                }
+            }
+
+            // Nếu có lỗi hoặc thành công, hiển thị lại form đổi mật khẩu với thông báo
+            return View(model);
+        }
+
+
+        private bool IsOldPasswordValid(string oldPassword)
+        {
+            var userId = Session["UserId"] as string;
+            if (userId != null)
+            {
+                // Giả sử có một đối tượng DbContext trong ứng dụng của bạn, ở đây là 'db'
+                    // Lấy thông tin người dùng từ cơ sở dữ liệu bằng userId
+                    var user = db.Accounts.FirstOrDefault(u => u.UserId == userId);
+
+                    // Kiểm tra xem người dùng tồn tại và mật khẩu cũ đúng hay không
+                    if (user != null && oldPassword == user.Password)
+                    {
+                        // Mật khẩu cũ đúng
+                        return true;
+                    }
+                }
+
+            // Mật khẩu cũ không đúng hoặc có lỗi xảy ra
+            return false;
+        }
 
     }
 }

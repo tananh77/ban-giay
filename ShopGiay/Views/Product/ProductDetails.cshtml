@@ -16,19 +16,98 @@
                     <h5 class="card-title">@Model.Name</h5>
                     <p class="card-text">Price: $@Model.Price</p>
                     <p class="card-text">Quantity: @Model.Quantity</p>
-                    <p class="card-text">Descripsion: <br />@Model.Descripsion</p>
 
                     <!-- Form thêm vào giỏ hàng -->
-                    <form method="post" action="@Url.Action("AddToCart", "YourController")">
+                    @using (Html.BeginForm("AddToCart", "Cart"))
+                    {
                         @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="quantity">
+                                        <span class="glyphicon glyphicon-minus">-</span>
+                                    </button>
+                                </span>
+                                <input style="max-width: 45px;" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="@Model.Quantity">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quantity">
+                                        <span class="glyphicon glyphicon-plus">+</span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
                         <input type="hidden" name="productId" value="@Model.ProductId">
                         <button type="submit" class="btn btn-primary">Add to Cart</button>
 
                         <!-- Nút Buy Now -->
-                        <a href="@Url.Action("BuyNow", "YourController", new { productId = Model.ProductId })" class="btn btn-success">Buy Now</a>
-                    </form>
+                        <a href="@Url.Action("BuyNow", "Cart", new { productId = Model.ProductId })" class="btn btn-success">Buy Now</a>
+                    }
+                </div>
+            </div>
+
+            <!-- Phần mô tả chi tiết -->
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Product Details</h5>
+                    <p class="card-text">
+                    <p>@Model.Descripsion</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn-number').click(function (e) {
+                e.preventDefault();
+
+                fieldName = $(this).attr('data-field');
+                type = $(this).attr('data-type');
+                var input = $("input[name='" + fieldName + "']");
+                var currentVal = parseInt(input.val());
+
+                if (!isNaN(currentVal)) {
+                    if (type === 'minus') {
+                        if (currentVal > input.attr('min')) {
+                            input.val(currentVal - 1).change();
+                        }
+                    } else if (type === 'plus') {
+                        if (currentVal < input.attr('max')) {
+                            input.val(currentVal + 1).change();
+                        }
+                    }
+                } else {
+                    input.val(0);
+                }
+            });
+
+            $('.input-number').focusin(function () {
+                $(this).data('oldValue', $(this).val());
+            });
+
+            $('.input-number').change(function () {
+                minValue = parseInt($(this).attr('min'));
+                maxValue = parseInt($(this).attr('max'));
+                valueCurrent = parseInt($(this).val());
+
+                name = $(this).attr('name');
+                if (valueCurrent >= minValue) {
+                    $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled');
+                } else {
+                    alert('Sorry, the minimum value was reached');
+                    $(this).val($(this).data('oldValue'));
+                }
+                if (valueCurrent <= maxValue) {
+                    $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled');
+                } else {
+                    alert('Sorry, the maximum value was reached');
+                    $(this).val($(this).data('oldValue'));
+                }
+            });
+        });
+    </script>
+}

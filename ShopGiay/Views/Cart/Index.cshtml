@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<ShopGiay.Models.CartItemViewModel>
+
+<div class="container">
+    <h2>Cart</h2>
+
+    @if (Model.Count > 0)
+    {
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("ProductDetails", "Product", new { productId = item.ProductId })">
+                                        <img src="@item.Image" alt="@item.Name" class="img-thumbnail" width="100" height="100" />
+                                    </a>
+                                </td>
+                                <td>@item.Name</td>
+                                <td>
+                                    $@item.Price
+                                    <br />@item.Available products available
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity('@item.ProductId', -1)">-</button>
+                                        <input style="max-width:45px" type="text" class="form-control text-center" value="@item.Quantity" readonly />
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity('@item.ProductId', 1)">+</button>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <button class="btn btn-danger" onclick="deleteProduct('@item.ProductId')">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <p class="total-price">Total: $@(Model.Sum(item => item.Price * item.Quantity))</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>Your cart is empty.</p>
+    }
+</div>
+
+<script>
+    function updateQuantity(productId, change) {
+        // Gọi AJAX để cập nhật số lượng trên server
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("UpdateQuantity", "Cart")",
+            data: { productId: productId, change: change },
+            success: function () {
+                // Nếu cập nhật thành công, tải lại trang để cập nhật hiển thị
+                location.reload();
+            },
+            error: function () {
+                alert("Error updating quantity.");
+            }
+        });
+    }
+
+    function deleteProduct(productId) {
+        // Gọi AJAX để xóa sản phẩm trên server
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("DeleteProduct", "Cart")",
+            data: { productId: productId },
+            success: function () {
+                // Nếu xóa thành công, tải lại trang để cập nhật hiển thị
+                location.reload();
+            },
+            error: function () {
+                alert("Error deleting product.");
+            }
+        });
+    }
+</script>

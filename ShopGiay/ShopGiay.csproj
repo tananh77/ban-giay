@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +139,8 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItemViewModel.cs" />
+    <Compile Include="Models\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\InforAccount.cs" />
     <Compile Include="Models\Order.cs" />
@@ -201,6 +204,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\InforAccount.cshtml" />
     <Content Include="Views\Product\ProductDetails.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Account\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
