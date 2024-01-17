@@ -1,0 +1,61 @@
+﻿@model ShopGiay.Models.Account
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit Account</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UserId)
+
+    <div class="card">
+        <div class="card-header bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase">Edit Account</strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-sm btn-outline-secondary" })
+                    <button type="submit" class="btn-sm btn btn-outline-success">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-3">
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "col-md-2 col-form-label font-weight-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-2 col-form-label font-weight-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "col-md-2 col-form-label font-weight-bold" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Role, new List<SelectListItem>
+                    {
+                        new SelectListItem { Value = "user", Text = "User" },
+                        new SelectListItem { Value = "admin", Text = "Admin" }
+                    }, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+}

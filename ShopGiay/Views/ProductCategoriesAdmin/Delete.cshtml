@@ -1,0 +1,105 @@
+﻿@model ShopGiay.Models.ProductCategory
+
+@{
+    ViewBag.Title = "DeleteConfirmed";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* Card formatting */
+    .card {
+        margin-top: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    /* Card header styling */
+    .card-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Button size */
+    .btn-success {
+        margin-left: 5px;
+    }
+
+    /* Detailed information table formatting */
+    dl {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    /* Detailed information table cell formatting */
+    dt, dd {
+        padding: 8px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Footer styling */
+    .footer {
+        margin-top: 20px;
+    }
+
+    /* Alert formatting */
+    .alert {
+        margin-top: 10px;
+    }
+
+    /* Delete confirmation button */
+    .my-2 {
+        margin-top: 10px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Confirm Category Deletion</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Index", "ProductCategoriesAdmin")" class="btn btn-sm btn-success">
+                    <i class="fas fa-arrow-left"></i> Back to the List
+                </a>
+                @using (Html.BeginForm("DeleteConfirmed", "ProductCategoriesAdmin", new { id = Model.CategoryId }, FormMethod.Post, new { @class = "my-2" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Delete" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete?')" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        @if (!string.IsNullOrEmpty(TempData["ErrorMessage"] as string))
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        <div class="alert alert-warning">
+            <strong>Notification:</strong> Are you sure you want to delete the category?
+        </div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CategoryId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+        </dl>
+    </div>
+</div>

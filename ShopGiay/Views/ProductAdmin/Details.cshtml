@@ -1,0 +1,68 @@
+﻿@model ShopGiay.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase">Product Details</strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "ProductAdmin")" class="btn btn-sm btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>
+                    <a href="@Url.Action("Edit", "ProductAdmin", new { id = Model.ProductId} )" class="btn btn-sm btn-primary">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="@Url.Content("~/Public/image/" + Model.Image)" alt="Image" class="img-fluid" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">No image available</p>
+                    }
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.ProductCategory.CategoryName)</th>
+                            <td>@Html.DisplayFor(model => model.ProductCategory.CategoryName)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.ProductId)</th>
+                            <td>@Html.DisplayFor(model => model.ProductId)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Name)</th>
+                            <td>@Html.DisplayFor(model => model.Name)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Price)</th>
+                            <td>@Html.DisplayFor(model => model.Price)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                            <td>@Html.DisplayFor(model => model.Quantity)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Descripsion)</th>
+                            <td>@Html.DisplayFor(model => model.Descripsion)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

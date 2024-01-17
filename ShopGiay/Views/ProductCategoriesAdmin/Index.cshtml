@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ShopGiay.Models.ProductCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* Card formatting */
+    .card {
+        margin-top: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    /* Card header styling */
+    .card-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Button size */
+    .btn-success {
+        margin-left: 5px;
+    }
+
+    /* Product category list table */
+    .table {
+        margin-top: 10px;
+    }
+
+    /* Header formatting for the table */
+    th, td {
+        text-align: center;
+    }
+
+    /* Checkbox styling */
+    input[name="checkId"] {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Feature formatting */
+    .btn-info, .btn-warning, .btn-danger {
+        margin: 0 3px;
+    }
+</style>
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger ">Product Categories List</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Create", "ProductCategoriesAdmin")" class="btn btn-sm btn-success">
+                    <i class="fas fa-plus"></i>Add
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Category ID</th>
+                    <th>Category Name</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@item.CategoryId</td>
+                        <td>@item.CategoryName</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit", "ProductCategoriesAdmin" , new { @id = item.CategoryId})" class="btn btn-sm btn-info">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="@Url.Action("Details", "ProductCategoriesAdmin" , new { @id = item.CategoryId})" class="btn btn-sm btn-warning">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", "ProductCategoriesAdmin" , new { @id = item.CategoryId})" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

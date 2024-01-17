@@ -1,0 +1,149 @@
+﻿@model IEnumerable<ShopGiay.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Replace old Font Awesome path with the new one from Font Awesome 6.0.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Add Bootstrap CSS path -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    /* Customize parts of the table */
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(0, 123, 255, 0.1); /* Light gray on hover */
+    }
+
+    /* Add background color for functional buttons */
+    .btn-info, .btn-warning, .btn-danger {
+        background-color: #17a2b8; /* Blue for Edit */
+    }
+
+    .btn-warning {
+        background-color: #ffc107; /* Yellow for Details */
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Red for Delete */
+    }
+
+    /* Increase size of function icons */
+    .btn i, .fas {
+        font-size: 18px;
+    }
+
+    /* Reduce space between rows in the table */
+    .table tbody tr {
+        margin-bottom: 5px;
+    }
+
+    /* Increase size of card header */
+    .card-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #ffffff;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Set background color for card and round corners */
+    .card {
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Increase size of FontAwesome icons */
+    .fas {
+        font-size: 16px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">List of Product Categories</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Create", "ProductAdmin")" class="btn btn-sm btn-success">
+                    <i class="fas fa-plus"></i>Add
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Username</th>
+                    <th>Category Name</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Account.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductCategory.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripsion)
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.Image))
+                            {
+                                <img src="~/Public/image/@item.Image" alt="Product Image" style="width: 100px; height: 100px" />
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit", "ProductAdmin", new { @id = item.ProductId})" class="btn btn-sm btn-info">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="@Url.Action("Details", "ProductAdmin", new { @id = item.ProductId})" class="btn btn-sm btn-warning">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", "ProductAdmin", new { @id = item.ProductId})" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

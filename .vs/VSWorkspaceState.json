@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ShopGiay",
+    "\\ShopGiay\\Controllers",
+    "\\ShopGiay\\Views",
+    "\\ShopGiay\\Views\\AccountManagement",
+    "\\ShopGiay\\Views\\Home",
+    "\\ShopGiay\\Views\\ProductAdmin",
+    "\\ShopGiay\\Views\\ProductCategoriesAdmin",
+    "\\ShopGiay\\Views\\Reports",
+    "\\ShopGiay\\Views\\Shared"
+  ],
+  "SelectedNode": "\\ShopGiay\\Controllers\\ReportsController.cs",
+  "PreviewInSolutionExplorer": false
+}

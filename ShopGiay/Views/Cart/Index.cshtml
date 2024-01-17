@@ -28,7 +28,7 @@
                             <tr>
                                 <td>
                                     <a href="@Url.Action("ProductDetails", "Product", new { productId = item.ProductId })">
-                                        <img src="@item.Image" alt="@item.Name" class="img-thumbnail" width="100" height="100" />
+                                        <img src="~/Public/image/@item.Image" alt="@item.Name" class="img-thumbnail" width="100" height="100" />
                                     </a>
                                 </td>
                                 <td>@item.Name</td>
@@ -46,7 +46,11 @@
 
                                 <td>
                                     <button class="btn btn-danger" onclick="deleteProduct('@item.ProductId')">Delete</button>
+                                    <a href="@Url.Action("BuyNow", "Cart", new { productId = item.ProductId })" class="btn btn-success">Buy Now</a>
                                 </td>
+
+                                
+
                             </tr>
                         }
                     </tbody>
@@ -55,6 +59,7 @@
                 <p class="total-price">Total: $@(Model.Sum(item => item.Price * item.Quantity))</p>
             </div>
         </div>
+
     }
     else
     {

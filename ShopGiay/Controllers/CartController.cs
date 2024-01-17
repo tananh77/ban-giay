@@ -1,4 +1,4 @@
-﻿using ShopGiay.Models;
+﻿    using ShopGiay.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -122,6 +122,25 @@ namespace ShopGiay.Controllers
 
             db.SaveChanges();
 
+            // Tạo một đơn hàng mới
+            var newOrder = new Order
+            {
+                OrderId = Guid.NewGuid().ToString(), // Tạo một OrderId mới
+                UserId = userId,
+                ProductId = productId,
+                TotalPrice = (double?)CalculateTotalPrice(productId), // Tính toán tổng giá tiền (thay thế hàm CalculateTotalPrice bằng phương thức tính toán thực tế của bạn)
+                /*PaymentMethodsId = "your_payment_method_id",*/ // Thay thế bằng ID của phương thức thanh toán được chọn
+                Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") // Thời gian hiện tại dạng chuỗi (thay đổi định dạng theo yêu cầu của bạn)
+            };
+            if (existingCartItem != null)
+            {
+                // Nếu đã tồn tại, cập nhật số lượng
+                existingCartItem.Quantity += 1;
+                existingCartItem.Condition = "OutCart"; // Cập nhật trạng thái thành "OutCart"
+            }
+            db.Orders.Add(newOrder);
+            db.SaveChanges();
+
             // Chuyển hướng về trang giỏ hàng hoặc trang sản phẩm tùy bạn
             return RedirectToAction("Index", "Cart");
         }
@@ -169,6 +188,21 @@ namespace ShopGiay.Controllers
 
             // Trả về trạng thái OK
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+        private decimal CalculateTotalPrice(string productId)
+        {
+            // Lấy thông tin sản phẩm từ cơ sở dữ liệu dựa trên productId
+            var product = db.Products.FirstOrDefault(p => p.ProductId == productId);
+
+            if (product != null)
+            {
+                // Tính toán tổng giá tiền của sản phẩm (ví dụ: giá sản phẩm nhân số lượng)
+                decimal totalPrice = (decimal)(product.Price * product.Quantity); // Ở đây số lượng được đặt là 1, bạn có thể thay đổi số lượng tùy theo yêu cầu của bạn
+
+                return totalPrice;
+            }
+
+            return 0; // Trả về giá trị mặc định nếu không tìm thấy sản phẩm
         }
 
     }

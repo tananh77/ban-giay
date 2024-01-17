@@ -36,18 +36,17 @@ namespace ShopGiay.Controllers
         [HttpGet]
         public ActionResult Search(string searchText)
         {
-            // Kiểm tra xem searchText có tồn tại hay không
             if (string.IsNullOrEmpty(searchText))
             {
-                // Nếu không có, chuyển hướng về trang chủ hoặc hiển thị thông báo lỗi
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
-            // Chạy truy vấn tìm kiếm trong cơ sở dữ liệu
-            var searchResults = db.Products.Where(p => p.Name.Contains(searchText)).ToList();
+            var searchResults = db.Products
+                .Where(p => p.Name.ToLower().Contains(searchText.ToLower()))
+                .ToList();
 
-            // Truyền kết quả tìm kiếm đến view
             return View(searchResults);
         }
+
     }
 }

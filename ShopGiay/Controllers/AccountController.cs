@@ -22,18 +22,29 @@ namespace ShopGiay.Controllers
         [HttpPost]
         public ActionResult Login(AccountModel model)
         {
-                var user = db.Accounts.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
+            var user = db.Accounts.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
 
-                if (user != null)
+            if (user != null)
+            {
+                // Đăng nhập thành công
+                Session["UserId"] = user.UserId;
+
+                if (user.Role == "user")
                 {
-                    // Đăng nhập thành công, thực hiện các hành động cần thiết (ví dụ: lưu thông tin vào Session)
-                    Session["UserId"] = user.UserId;
-                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang chính sau khi đăng nhập thành công
+                    // Nếu vai trò là "user", chuyển hướng đến trang chính
+                    return RedirectToAction("Index", "Home");
                 }
-
-                ViewBag.Notification = "Invalid username or password.";
-            return View(model);
+                else if (user.Role == "admin")
+                {
+                    // Nếu vai trò là "admin", chuyển hướng đến trang report
+                    return RedirectToAction("Index", "Reports");
+                }
             }
+
+            ViewBag.Notification = "Invalid username or password.";
+            return View(model);
+        }
+
 
 
         [HttpGet]
@@ -58,7 +69,7 @@ namespace ShopGiay.Controllers
 
                         var newUser = new Account
                         {
-                            UserId = "IDUs" + model.Username,
+                            UserId = "IDUs" + model.Role + model.Username,
                             Username = model.Username.Trim(),
                             Password = model.Password.Trim(),
                             Role = "user"

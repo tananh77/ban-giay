@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ShopGiay.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* Card formatting */
+    .card {
+        margin-top: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    /* Card header styling */
+    .card-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Button size */
+    .btn-success {
+        margin-left: 5px;
+    }
+
+    /* Account information table formatting */
+    table {
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: center;
+    }
+
+    /* Functions */
+    .text a {
+        margin-right: 5px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">List of Accounts</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Create", "AccountManagement")" class="btn btn-sm btn-success">
+                    <i class="fas fa-plus"></i> Add
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    Functions
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td class="text">
+
+                        <a href="@Url.Action("Edit", "AccountManagement", new { @id = item.UserId })" class="btn btn-sm btn-info">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <a href="@Url.Action("Details", "AccountManagement", new { @id = item.UserId })" class="btn btn-sm btn-warning">
+                            <i class="fas fa-eye"></i>
+                        </a>
+
+                        <a href="@Url.Action("Delete", "AccountManagement", new { @id = item.UserId })" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
