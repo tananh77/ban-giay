@@ -1,0 +1,62 @@
+﻿@model ShopGiay.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase text-danger">Account Details</strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "AccountManagement")" class="btn btn-sm btn-outline-success">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>
+                    <a href="@Url.Action("Edit", "AccountManagement", new { id = Model.UserId} )" class="btn btn-sm btn-outline-success">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.UserId)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Username)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Username)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Role)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Role)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

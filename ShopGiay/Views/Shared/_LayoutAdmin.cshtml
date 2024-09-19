@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutAdmin.css" rel="stylesheet" />
+    <link href="~/Public/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        // Define the logout function
+        function logout() {
+            // Perform logout operations here
+            // Example: redirect to the login page
+            window.location.href = '@Url.Action("Logout", "Account")';
+        }
+    </script>
+    @RenderSection("head", required: false)
+    <style>
+        .navbar-nav .logout-link {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        body {
+            background-color: #f8f9fa; /* Page background color */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Use a higher z-index to make sure it appears above other content */
+            background-color: #53a879 !important; /* Header background color */
+        }
+
+            .header a.navbar-brand {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+        .navbar-toggler-icon {
+            background-color: #fff; /* Toggle icon color */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff; /* Menu text color */
+        }
+
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+            display: block; /* Display dropdown menu on hover */
+        }
+
+        .maincontent {
+            min-height: 100vh;
+            background-color: #fff; /* Main content background color */
+            border: 1px solid #ddd; /* Main content border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
+            margin-top: 20px; /* Top margin */
+            padding: 20px; /* Inner padding */
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #53a879 !important; /* Footer background color */
+            color: #fff; /* Footer text color */
+            padding: 15px 0; /* Footer padding */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="clearfix header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Reports")">Admin Management</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Products
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ProductAdmin")">Product List</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ProductCategoriesAdmin")">Category List</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Customer Accounts
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "AccountManagement")">Customer Account List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" style="position: absolute; right: 0;">
+                                <a class="nav-link logout-link" onclick="logout()">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="clearfix maincontent">
+        <div class="container-fluid py-5">
+            @RenderBody()
+        </div>
+    </section>
+
+    <section class="clearfix footer">
+        <div class="container-fluid text-white text-center py-1">
+            <p>Copyright 2024</p>
+        </div>
+    </section>
+
+    @RenderSection("footer", required: false)
+
+</body>
+
+</html>

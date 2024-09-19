@@ -51,8 +51,8 @@
         {
             <div class="col-md-4 mb-4">
                 <a href="@Url.Action("ProductDetails", "Product", new { productId = product.ProductId })" class="card-link">
-                    <div class="card">
-                        <img src="@product.Image" class="card-img-top" alt="@product.Name" style="max-height: 200px; object-fit: cover;">
+                    <div class="card h-100">
+                        <img src="~/Public/image/@product.Image" class="card-img-top" alt="@product.Name" style="max-height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">@product.Name</h5>
                             <p class="card-text">Price: $@product.Price</p>

@@ -1,0 +1,88 @@
+﻿@model ShopGiay.Models.ProductCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* Card formatting */
+    .card {
+        margin-top: 20px;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Card header styling */
+    .card-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-bottom: 1px solid #dee2e6;
+        border-radius: 5px 5px 0 0;
+    }
+
+    /* Button size */
+    .btn-success {
+        margin-left: 10px;
+    }
+
+    /* Detailed information table formatting */
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    /* Detailed information table cell formatting */
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Footer note formatting */
+    .footer {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <strong class="text-uppercase text-danger">Product</strong>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Index", "ProductAdmin")" class="btn btn-sm btn-success">
+                    <i class="fas fa-arrow-left"></i>Back to List
+                </a>
+                <a href="@Url.Action("Edit", "ProductAdmin", new { id = Model.Products} )" class="btn btn-sm btn-success">
+                    <i class="fas fa-save"></i>Edit
+                </a>
+            </div>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.CategoryId)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CategoryId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.CategoryName)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CategoryName)
+            </td>
+        </tr>
+    </table>
+</div>

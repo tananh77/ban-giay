@@ -1,0 +1,92 @@
+﻿@model ShopGiay.Models.ProductCategory
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* Card formatting */
+    .card {
+        margin-top: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    /* Card header styling */
+    .card-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Button size */
+    .btn-success {
+        margin-left: 5px;
+    }
+
+    /* Form formatting */
+    .form-horizontal {
+        margin-top: 20px;
+    }
+
+    /* Label and input field formatting */
+    .control-label {
+        font-weight: bold;
+    }
+
+    /* Input field formatting */
+    .form-control {
+        width: 100%;
+    }
+
+    /* Warning alert */
+    .alert-warning {
+        margin-top: 20px;
+    }
+
+    /* Footer note */
+    .footer {
+        margin-top: 20px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase text-danger">Add Product Category</strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "ProductCategoriesAdmin")" class="btn btn-sm btn-success">
+                        <i class="fas fa-arrow-left"></i>Back to List
+                    </a>
+                    <button type="submit" class="btn-sm btn btn-success">
+                        <i class="fas fa-save"></i>Save[Add]
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-3">
+            <div class="alert alert-warning">
+                <strong>Notice: </strong> Do you want to add this category?
+            </div>
+            <div class="form-horizontal">
+                <h4>Product Category</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

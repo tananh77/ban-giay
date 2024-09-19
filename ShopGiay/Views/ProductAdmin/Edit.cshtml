@@ -1,0 +1,77 @@
+﻿@model ShopGiay.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase">
+                        Edit products
+                    </strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "ProductAdmin")" class="btn btn-sm btn-success">
+                        <i class="fas fa-arrow-left"></i> Back to the list
+                    </a>
+                    <button type="submit" class="btn-sm btn btn-success">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+            </div>
+            <div class="alert alert-warning mt-2">
+                <strong>
+                    Notification:
+                </strong> Do you want to edit this product?
+            </div>
+        </div>
+        <div class="card-body p-3">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label" })</strong>
+                        <input type="file" name="imageFile" id="imageFile" accept="image/*" class="form-control" onchange="previewFile(event)" />
+                        <img id="previewImage" src="~/Public/image/@Model.Image" alt="Xem trước" class="mt-2 img-thumbnail" style="max-width: 350px; max-height: 350px; display: block;" />
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.Descripsion, htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.TextAreaFor(model => model.Descripsion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Descripsion, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.UserId, "User", htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <strong>@Html.LabelFor(model => model.CategoryId, "Category", htmlAttributes: new { @class = "control-label" })</strong>
+                        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿@model ShopGiay.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-uppercase">Delete</strong>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="@Url.Action("Index", "ProductAdmin")" class="btn btn-sm btn-success">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>
+                    <input type="submit" value="Delete" class="btn btn-sm btn-danger" onclick="return confirm('Do you want to delete?');" />
+                </div>
+            </div>
+            <div class="alert alert-warning">
+                <strong>Notification: </strong> Do you want to delete?
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-3">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="@Url.Content("~/Public/image/" + Model.Image)" alt="Image" class="img-thumbnail" />
+                    }
+                    else
+                    {
+                        <p>No image available</p>
+                    }
+                </div>
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Account.Username)</th>
+                            <td>@Html.DisplayFor(model => model.Account.Username)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.ProductCategory.CategoryName)</th>
+                            <td>@Html.DisplayFor(model => model.ProductCategory.CategoryName)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.ProductId)</th>
+                            <td>@Html.DisplayFor(model => model.ProductId)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Name)</th>
+                            <td>@Html.DisplayFor(model => model.Name)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Price)</th>
+                            <td>@Html.DisplayFor(model => model.Price)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                            <td>@Html.DisplayFor(model => model.Quantity)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Descripsion)</th>
+                            <td>@Html.DisplayFor(model => model.Descripsion)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
