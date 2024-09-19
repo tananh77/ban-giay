@@ -1,0 +1,318 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|c:\\users\\asus\\onedrive\\documents\\phat-trien-phan mem-chuyen-nghiep\\shopgiay\\shopgiay\\shopgiay\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\product\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\product\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\account\\changepass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\account\\changepass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\inforaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\inforaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\views\\product\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\views\\product\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\shopgiay\\models\\cartitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18828AF2-6F55-4B79-BC15-FBBCA1015415}|ShopGiay\\ShopGiay.csproj|solutionrelative:shopgiay\\models\\cartitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-10T08:07:14.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Product\\Search.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Product\\Search.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Product\\Search.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Product\\Search.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ShopGiay\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ShopGiay\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAjwA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChangePass.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Account\\ChangePass.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Account\\ChangePass.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Account\\ChangePass.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Account\\ChangePass.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Cart.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Order.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\Order.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccountModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\AccountModel.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\AccountModel.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\AccountModel.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\AccountModel.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ShopGiay\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAAAlwNEAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Controllers\\CartController.cs",
+              "RelativeToolTip": "ShopGiay\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAKwAAAAAAAAAAAArwFsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InforAccount.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\InforAccount.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\InforAccount.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\InforAccount.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\InforAccount.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\Account.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\Account.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProductDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Product\\ProductDetails.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Product\\ProductDetails.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Product\\ProductDetails.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Product\\ProductDetails.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShopGiay\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "ShopGiay\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADAAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-10T08:07:15.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\CartItemViewModel.cs",
+              "RelativeDocumentMoniker": "ShopGiay\\Models\\CartItemViewModel.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Documents\\phat-trien-phan mem-chuyen-nghiep\\ShopGiay\\ShopGiay\\ShopGiay\\Models\\CartItemViewModel.cs",
+              "RelativeToolTip": "ShopGiay\\Models\\CartItemViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T08:07:15.621Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
